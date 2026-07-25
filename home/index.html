@@ -9,10 +9,15 @@
 </head>
 <body>
 
-  <!-- 右上固定のアコーディオン目次 -->
-  <nav class="toc" tabindex="0">
+  <!-- コンパクトな固定ヘッダー -->
+  <header>
+    <h1>オープンチャット ルールブック</h1>
+  </header>
+
+  <!-- 右上固定のクリック開閉式目次 -->
+  <nav class="toc" id="tocMenu">
     <div class="toc-title">
-      <span>目次</span>
+      <span>📌 目次</span>
     </div>
     <div class="toc-content">
       <ul>
@@ -29,11 +34,6 @@
       </ul>
     </div>
   </nav>
-
-  <header>
-    <h1>オープンチャット ルールブック</h1>
-    <p>（勉強）×（雑談）環境下で楽しく活動するためのガイドライン</p>
-  </header>
 
   <div class="container">
 
@@ -188,6 +188,25 @@
     </section>
 
   </div>
+
+  <!-- クリックで目を開閉するためのJavaScript -->
+  <script>
+    const tocMenu = document.getElementById('tocMenu');
+    
+    // 目次をクリックしたときに開閉を切り替える
+    tocMenu.addEventListener('click', (e) => {
+      tocMenu.classList.toggle('active');
+    });
+
+    // リンクをクリックしたら目次を自動で閉じる
+    const links = tocMenu.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.stopPropagation(); // 親要素のクリックイベント重複を防ぐ
+        tocMenu.classList.remove('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
