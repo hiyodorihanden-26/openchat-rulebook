@@ -14,43 +14,62 @@ body {
   color: var(--text-color);
   background-color: var(--bg-color);
   margin: 0;
-  padding: 0;
+  /* ヘッダーが上に固定されるので、そのぶん上に余白を空ける */
+  padding-top: 70px;
 }
 
+/* ★ コンパクトにして画面上部に固定するヘッダー */
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
   background-color: var(--primary-color);
   color: white;
-  text-align: center;
-  padding: 2.5rem 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 900;
+  box-sizing: border-box;
 }
 
 header h1 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.8rem;
+  margin: 0;
+  font-size: 1.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+header p {
+  display: none; /* 省スペース化のためサブタイトルは非表示 */
 }
 
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 1.5rem 1rem;
+  padding: 1rem;
 }
 
-/* 右上に固定表示するアコーディオン目次 */
+/* ★ 右上に固定するクリック開閉式目次 */
 .toc {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 8px;
+  right: 12px;
   z-index: 1000;
   background: white;
   border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 12px 18px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 6px 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
   cursor: pointer;
-  max-width: 260px;
-  width: calc(100% - 40px);
+  max-width: 240px;
+  width: auto;
   box-sizing: border-box;
-  transition: all 0.3s ease;
+  user-select: none;
 }
 
 .toc-title {
@@ -59,36 +78,36 @@ header h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
+  gap: 6px;
 }
 
 .toc-title::after {
   content: "▼";
-  font-size: 0.7rem;
-  margin-left: 8px;
+  font-size: 0.65rem;
   transition: transform 0.3s ease;
+}
+
+/* JSで .active が付いたときに矢印を回転 */
+.toc.active .toc-title::after {
+  transform: rotate(180deg);
 }
 
 .toc-content {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
 }
 
-/* ホバー（またはタップ）時に下にスッと伸びる */
-.toc:hover .toc-content,
-.toc:focus-within .toc-content {
-  max-height: 500px;
+/* JSで .active が付いたときだけメニューが開く */
+.toc.active .toc-content {
+  max-height: 400px;
   opacity: 1;
-  margin-top: 10px;
-  padding-top: 10px;
+  margin-top: 8px;
+  padding-top: 8px;
   border-top: 1px dashed var(--border-color);
-}
-
-.toc:hover .toc-title::after,
-.toc:focus-within .toc-title::after {
-  transform: rotate(180deg);
+  overflow-y: auto; /* 画面からはみ出ないようにスクロール可に */
 }
 
 .toc ul {
@@ -98,15 +117,14 @@ header h1 {
 }
 
 .toc li {
-  margin-bottom: 0.5rem;
-  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
 }
 
 .toc li a {
   color: #555;
   text-decoration: none;
   display: block;
-  transition: color 0.2s ease;
 }
 
 .toc li a:hover {
@@ -118,39 +136,39 @@ header h1 {
 .card {
   background: var(--card-bg);
   border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  padding: 1.2rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 h2 {
   color: var(--primary-color);
   border-bottom: 2px solid var(--primary-color);
-  padding-bottom: 0.4rem;
+  padding-bottom: 0.3rem;
   margin-top: 0;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 h3 {
-  font-size: 1.1rem;
-  margin-top: 1.2rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
 }
 
 ul, ol {
   padding-left: 1.2rem;
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
 }
 
 li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .alert-box {
   background-color: #fdf2f2;
   border-left: 4px solid var(--accent-red);
   padding: 0.8rem 1rem;
-  margin: 1rem 0;
+  margin: 0.8rem 0;
   border-radius: 0 8px 8px 0;
 }
 
@@ -158,7 +176,7 @@ li {
   background-color: #eef7fc;
   border-left: 4px solid var(--accent-blue);
   padding: 0.8rem 1rem;
-  margin: 1rem 0;
+  margin: 0.8rem 0;
   border-radius: 0 8px 8px 0;
 }
 
@@ -176,26 +194,14 @@ a:hover {
   display: inline-block;
   background-color: var(--primary-color);
   color: white;
-  padding: 0.6rem 1.2rem;
+  padding: 0.5rem 1rem;
   border-radius: 20px;
   font-weight: bold;
-  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
 }
 
 .btn-link:hover {
   text-decoration: none;
   opacity: 0.9;
-}
-
-/* スマホ画面での表示調整 */
-@media (max-width: 600px) {
-  .toc {
-    top: 12px;
-    right: 12px;
-    max-width: 200px;
-    padding: 8px 12px;
-  }
-  .toc-title {
-    font-size: 0.85rem;
-  }
 }
