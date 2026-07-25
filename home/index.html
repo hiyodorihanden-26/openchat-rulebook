@@ -195,16 +195,21 @@
     
     // 目次をクリックしたときに開閉を切り替える
     tocMenu.addEventListener('click', (e) => {
+      e.stopPropagation(); // 目次自体のクリックイベントが外に逃げないようにする
       tocMenu.classList.toggle('active');
     });
 
-    // リンクをクリックしたら目次を自動で閉じる
+    // リンクをクリックしたら目次を閉じる
     const links = tocMenu.querySelectorAll('a');
     links.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.stopPropagation(); // 親要素のクリックイベント重複を防ぐ
+      link.addEventListener('click', () => {
         tocMenu.classList.remove('active');
       });
+    });
+
+    // ★追加部分：画面の「目次以外の場所」をクリックしたときに目次を閉じる
+    document.addEventListener('click', () => {
+      tocMenu.classList.remove('active');
     });
   </script>
 
