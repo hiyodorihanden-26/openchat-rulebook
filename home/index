@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>オープンチャット ルールブック</title>
+  <!-- 同じフォルダにある style.css を読み込む -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <header>
+    <h1>オープンチャット ルールブック</h1>
+    <p>みんなが楽しく過ごすための大切なお約束です。</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>1. 禁止事項</h2>
+      <ul>
+        <li>他の参加者への誹謗中傷や嫌がらせ</li>
+        <li>許可のない宣伝・勧誘行為</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. マナー</h2>
+      <ul>
+        <li>入室時は軽く挨拶をしましょう！</li>
+        <li>みんなが読みやすい言葉遣いを心がけましょう。</li>
+      </ul>
+    </section>
+  </main>
+
+</body>
+</html>
