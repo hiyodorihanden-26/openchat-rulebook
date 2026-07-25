@@ -3,34 +3,312 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>オープンチャット-ルール</title>
-  <!-- 同じフォルダにある style.css を読み込む -->
-  <link rel="stylesheet" href="style.css">
+  <title>オープンチャット ルールブック</title>
+  <style>
+    :root {
+      --primary-color: #06c755;
+      --bg-color: #f4f5f7;
+      --card-bg: #ffffff;
+      --text-color: #333333;
+      --accent-red: #e74c3c;
+      --accent-blue: #3498db;
+      --border-color: #e0e0e0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 2.5rem 1rem 2rem;
+    }
+
+    header h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.8rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 0.4rem;
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin-top: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    ul, ol {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .alert-box {
+      background-color: #fdf2f2;
+      border-left: 4px solid var(--accent-red);
+      padding: 0.8rem 1rem;
+      margin: 1rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .info-box {
+      background-color: #eef7fc;
+      border-left: 4px solid var(--accent-blue);
+      padding: 0.8rem 1rem;
+      margin: 1rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .btn-link {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+
+    .btn-link:hover {
+      text-decoration: none;
+      opacity: 0.9;
+    }
+
+    .toc {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .toc ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .toc li {
+      margin-bottom: 0.3rem;
+    }
+  </style>
 </head>
 <body>
 
   <header>
     <h1>オープンチャット ルールブック</h1>
-    <p>みんなが楽しく過ごすための大切なお約束です。</p>
+    <p>（勉強）×（雑談）環境下で楽しく活動するためのガイドライン</p>
   </header>
 
-  <main>
-    <section>
-      <h2>1. 禁止事項</h2>
-      <ul>
-        <li>他の参加者への誹謗中傷や嫌がらせ</li>
-        <li>許可のない宣伝・勧誘行為</li>
-      </ul>
+  <div class="container">
+
+    <!-- 目的 -->
+    <section class="card">
+      <h2>■ 目的</h2>
+      <p>このオープンチャットはわからない問題・勉強法等の質問に<strong>誰でも</strong>受け答えができる場所で、<strong>（勉強）×（雑談）</strong>の環境下で楽しく活動することを基本とします。</p>
     </section>
 
-    <section>
-      <h2>2. マナー</h2>
+    <!-- 目次 -->
+    <nav class="toc">
+      <strong>目次（各部屋のルールへジャンプ）</strong>
       <ul>
-        <li>入室時は軽く挨拶をしましょう！</li>
-        <li>みんなが読みやすい言葉遣いを心がけましょう。</li>
+        <li><a href="#room1">① メインルーム</a></li>
+        <li><a href="#room2">② 雑談ROOM</a></li>
+        <li><a href="#room3">③ 意見箱</a></li>
+        <li><a href="#room4">④ 進路/学校相談口</a></li>
+        <li><a href="#room5">⑤ 高校範囲部屋</a></li>
+        <li><a href="#room6">⑥ 作問部屋</a></li>
+        <li><a href="#room7">⑦ 通知回避兼ライブトーク部屋</a></li>
+        <li><a href="#room8">⑧ お役立ち勉強法共有room</a></li>
+        <li><a href="#penalty">■ 強制退会・詳細規定</a></li>
+        <li><a href="#self-study">■ 自習室について</a></li>
       </ul>
+    </nav>
+
+    <!-- ルール一覧 -->
+    <section class="card">
+      <h2>■ ルール</h2>
+
+      <!-- ① メインルーム -->
+      <article id="room1">
+        <h3>① メインルーム（全体ルール含む）</h3>
+        
+        <h4>1) 用途</h4>
+        <ul>
+          <li>分からない問題があった時にいつでも自由に質問をしていい場です。（※高校範囲に関しては「⑤高校範囲部屋」をご利用ください）</li>
+          <li>質問がないときは雑談をしても大丈夫です。</li>
+        </ul>
+
+        <div class="alert-box">
+          <h4>2) 禁止事項</h4>
+          <ul>
+            <li><strong>モラルに反した行為</strong>（アイコン、名前、発言がセンシティブなものや特定の人への侮辱と取れるもの）</li>
+            <li><strong>他SNS・アプリなどの交換やID記載</strong>（LINE, Discord, インスタ, X, スタプラ, ゲームなど）</li>
+            <li><strong>宣伝行為</strong>（Youtubeチャンネルや他オプチャなど。※勉強に関係のあるYoutube共有は可）</li>
+            <li><strong>アンケート調査</strong>（事前相談がないもの）</li>
+            <li>勉強と無関係の画像・動画・ボイスメッセージ・URL・チェーンメールの投稿</li>
+            <li>ユニコ砲・文字連・スタ連・BOTを使用した短時間における過度な投稿</li>
+            <li>広範囲の著作物の転載（1ページ以上の表示要求など）</li>
+            <li>マルチポスト・宿題の丸投げ・複数の問題の同時投稿</li>
+            <li>質問対象者へのリスペクトに欠けた行為</li>
+            <li><strong>AI（ChatGPT, Copilot, Gemini等）からの回答をそのまま添付する行為</strong>（雑談利用は可）</li>
+            <li>公式ガイドラインに抵触する行為（<a href="https://openchat-jp.line.me/other/guideline" target="_blank">公式ガイドライン</a>）</li>
+          </ul>
+        </div>
+
+        <div class="info-box">
+          <h4>3) マナー</h4>
+          <ul>
+            <li>自分で調べてわかる範囲の質問は各自で対応をお願いします。（大事なノート「検索の方法とテクニック」参照）</li>
+            <li>個人情報の取り扱いには十分ご注意ください。（大事なノート「ネットリテラシーについて」参照）</li>
+            <li>質問の際はスレッドを活用してください（スレッドでの雑談・送信取り消しはお控えください）。</li>
+            <li>即抜けは全く問題ありません。</li>
+            <li>顔写真のアイコン設定はお控えください。</li>
+            <li>挨拶スタンプ、音声付き・画面全体に広がるスタンプ、GIF画像はご遠慮ください。</li>
+            <li>質問者は解決後、回答者にお礼と解決した旨を伝えてください。</li>
+            <li>名指し（メンション）での質問対応はご遠慮ください。</li>
+            <li>深夜帯での雑談はご遠慮ください（質問は常時可）。</li>
+            <li>雑談中であっても遠慮なく質問してください！</li>
+          </ul>
+        </div>
+      </article>
+
+      <hr style="border:0; border-top:1px solid #eee; margin:2rem 0;">
+
+      <!-- 各部屋 -->
+      <article id="room2">
+        <h3>② 雑談ROOM</h3>
+        <p><strong>用途:</strong> 自由に雑談をして良い場所です。毎週金・土曜日にライブトークを開催しています。</p>
+        <p><strong>ルール:</strong> メインのルールを準用します。勉強無関係の画像・動画投稿も許可されています。</p>
+        <a href="https://line.me/ti/g2/oYAqMcrZfzG9lT2e7R_S-e8YKRyneCa_Or0MAA" class="btn-link" target="_blank">雑談ROOMに参加</a>
+      </article>
+
+      <hr style="border:0; border-top:1px solid #eee; margin:2rem 0;">
+
+      <article id="room3">
+        <h3>③ 意見箱</h3>
+        <p>オプチャを改善するための意見や、管理陣営への意見を発信する場所です。</p>
+        <a href="https://line.me/ti/g2/ZcdLOTH0SS2A8BfWkOJiDlaqPmD0_xGCtF1WRw" class="btn-link" target="_blank">意見箱に参加</a>
+      </article>
+
+      <hr style="border:0; border-top:1px solid #eee; margin:2rem 0;">
+
+      <article id="room4">
+        <h3>④ 進路/学校相談口</h3>
+        <p>進路や学校生活の悩みを相談する場所です。志望校名は伏せ、偏差値等で表現するようご協力ください。</p>
+        <a href="https://line.me/ti/g2/K7AdKXxlbaXnG1LNDTq1YzEXBBJ_Moa8LqmRHQ" class="btn-link" target="_blank">進路/学校相談口に参加</a>
+      </article>
+
+      <hr style="border:0; border-top:1px solid #eee; margin:2rem 0;">
+
+      <article id="room5">
+        <h3>⑤ 高校範囲部屋</h3>
+        <p>高校範囲の内容についての質問をする専用部屋です。</p>
+        <a href="https://line.me/ti/g2/ZeXdEGfIzqpwtDmdZCGTI_m2lCzu8eWJAnSGPg" class="btn-link" target="_blank">高校範囲部屋に参加</a>
+      </article>
+
+      <hr style="border:0; border-top:1px solid #eee; margin:2rem 0;">
+
+      <article id="room6">
+        <h3>⑥ 作問部屋</h3>
+        <p>自作問題や興味深い問題を紹介しあう場所です。</p>
+        <a href="https://line.me/ti/g2/yjotiepeeaqUIk2QKBXS0fj9U9gecvgubWWtsw" class="btn-link" target="_blank">作問部屋に参加</a>
+      </article>
+
+      <hr style="border:0; border-top:1px solid #eee; margin:2rem 0;">
+
+      <article id="room7">
+        <h3>⑦ 通知回避兼ライブトーク部屋</h3>
+        <p>無駄な通知を減らすための部屋です。例外を除き発言禁止（スレッドでの質問はOK）。</p>
+        <a href="https://line.me/ti/g2/Hep0FTeJHoNpmpF8dxvrjFOwYzvV-myRoYxoeg" class="btn-link" target="_blank">通知回避部屋に参加</a>
+      </article>
+
+      <hr style="border:0; border-top:1px solid #eee; margin:2rem 0;">
+
+      <article id="room8">
+        <h3>⑧ お役立ち勉強法共有room</h3>
+        <p>ノートまとめや勉強法を共有する場所です。（※質問対応は受け付けておりません）</p>
+        <p><a href="https://forms.gle/3gPHhn2656Pi7vnL6" target="_blank">👉 お役立ちノート要望アンケートフォーム</a></p>
+      </article>
+
     </section>
-  </main>
+
+    <!-- 強制退会規定 -->
+    <section class="card" id="penalty">
+      <h2>■ 強制退会・ペナルティ詳細</h2>
+      
+      <div class="alert-box">
+        <h4>即時強制退会（または3分猶予）</h4>
+        <ul>
+          <li>モラル反行（アイコン・名前変更に3分間無視で強退）</li>
+          <li>ユニコ砲・文字連・スタ連・BOT乱用</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h4>注意後に改善が見られない場合</h4>
+        <ul>
+          <li>連絡先の交換 / 悪質な宣伝行為 / ボイスメッセージ</li>
+          <li>勉強無関係なコンテンツの投稿</li>
+        </ul>
+      </div>
+
+      <p><a href="https://forms.gle/xjvXse1BkJHFc6ok9" target="_blank">👉 強制退会の異議申し立てフォーム</a></p>
+    </section>
+
+    <!-- ガチ自習室 -->
+    <section class="card" id="self-study">
+      <h2>■ ガチ自習室（別管轄）</h2>
+      <p>努力を讃え合うための自習室です。「君は賢いね」ではなく努力を評価します。</p>
+      <ul>
+        <li>即抜けOK / 他オプ勧誘禁止 / スレッド作成禁止</li>
+        <li>他人の批判・別オプの話題持ち出しは厳禁</li>
+        <li>学習記録は「○h○m」形式で報告にご協力ください</li>
+      </ul>
+      <p><a href="https://cpb-us-w2.wpmucdn.com/web.sas.upenn.edu/dist/b/398/files/2019/04/1998-04530-003-1sagefw.pdf" target="_blank">📄 設立理念に関する研究資料（PDF）</a></p>
+      <a href="https://line.me/ti/g2/27Vcb7a2pKIpqGRngCFMVLVJLaMn8M8QntHyIg" class="btn-link" target="_blank">ガチ自習室に参加</a>
+    </section>
+
+  </div>
 
 </body>
 </html>
