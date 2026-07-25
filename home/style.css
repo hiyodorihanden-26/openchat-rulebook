@@ -211,3 +211,25 @@ a:hover {
   text-decoration: none;
   opacity: 0.9;
 }
+
+/* ヘッダー文字が目次と重ならないように右側に余白を作る */
+header {
+  padding-right: 110px !important; /* 目次ボタンの幅＋余裕を持たせる */
+}
+
+/* スマホ表示（画面幅600px以下）のときの追加調整 */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 0.95rem; /* スマホでは文字を少し小さくして収まりやすくする */
+  }
+
+  .toc {
+    top: 10px;
+    right: 8px;
+    padding: 4px 8px; /* スマホでは目次ボタン自体もコンパクトに */
+  }
+
+  .toc-title {
+    font-size: 0.75rem;
+  }
+}
